@@ -2,9 +2,14 @@
   "name": "authentication",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js",
+      "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    }
   },
   "keywords": [],
   "author": "",
