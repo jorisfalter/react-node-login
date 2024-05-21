@@ -12,6 +12,8 @@ const users = []; // In-memory user storage for simplicity
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'))
+
 
 // User registration route
 app.post("/register", async (req, res) => {
