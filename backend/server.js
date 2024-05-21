@@ -1,5 +1,5 @@
 const express = require("express");
-// const bcrypt = require("bcrypt");
+const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
 require("dotenv").config();
@@ -12,13 +12,12 @@ const users = []; // In-memory user storage for simplicity
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'))
-
+app.use(express.static("public"));
 
 // User registration route
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const hashedPassword = await bcryptjs.hash(password, 10);
   users.push({ username, password: hashedPassword });
   res.status(201).send("User registered");
   console.log("registered");
@@ -28,7 +27,7 @@ app.post("/register", async (req, res) => {
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const user = users.find((u) => u.username === username);
-  if (user && (await bcrypt.compare(password, user.password))) {
+  if (user && (await bcryptjs.compare(password, user.password))) {
     const token = jwt.sign({ username: user.username }, SECRET_KEY);
     res.json({ token });
     console.log("logged in");
