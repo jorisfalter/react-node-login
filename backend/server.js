@@ -16,6 +16,7 @@ app.use(express.json());
 // app.use(express.static("public"));
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "../../frontend/build")));
+// app.use(express.static(path.resolve(__dirname, "../client/build"))); from randomairport
 
 // User registration route
 app.post("/register", async (req, res) => {
