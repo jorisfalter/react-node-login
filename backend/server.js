@@ -5,7 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3001;
 const SECRET_KEY = process.env.SECRET_KEY || "your_jwt_secret_key"; // Use environment variables in production
 
 const users = []; // In-memory user storage for simplicity
