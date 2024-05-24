@@ -57,9 +57,9 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from the backend!" });
 });
 
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello, World!");
+// });
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
@@ -68,5 +68,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Joris' Server running on port ${PORT}`);
 });
