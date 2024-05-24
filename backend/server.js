@@ -6,7 +6,7 @@ const path = require("path");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const SECRET_KEY = process.env.SECRET_KEY || "your_jwt_secret_key"; // Use environment variables in production
 
 const users = []; // In-memory user storage for simplicity

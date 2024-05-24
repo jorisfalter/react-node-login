@@ -8,7 +8,7 @@ const AuthProvider = ({ children }) => {
 
   const login = async (username, password) => {
     try {
-      const response = await axios.post("http://localhost:3001/login", {
+      const response = await axios.post("http://localhost:3000/login", {
         username,
         password,
       });
@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
 
   const register = async (username, password) => {
     try {
-      await axios.post("http://localhost:3001/register", {
+      await axios.post("http://localhost:3000/register", {
         username,
         password,
       });
